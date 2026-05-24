@@ -14,7 +14,7 @@ that helps automate the resume screening process for recruiters and companies.
 - Flask
 - HTML
 - CSS
-- 
+
 ## Project Purpose
 This project is designed to reduce manual effort in recruitment by organizing and managing resumes efficiently.
 It demonstrates backend development, frontend design,and real-world web application development skills.
