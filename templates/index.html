@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Smart Resume Screening
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+       <h1>
+    Smart Resume Screening System
+    </h1>
+
+    <p>
+    Upload your resume and check skill matching instantly
+    </p>
+
+        <form
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <input
+                type="file"
+                name="resume"
+                required
+            >
+
+            <br>
+
+            <button type="submit">
+
+                Upload Resume
+
+            </button>
+            <br><br>
+
+            <a href="/">
+
+            <button type="button">
+
+            Upload Another Resume
+
+            </button>
+
+            </a>
+
+        </form>
+
+        <div class="result">
+        {% if match_percent >= 70 %}
+
+        high
+
+        {% elif match_percent >= 40 %}
+
+        medium
+
+        {% else %}
+
+        low
+
+        {% endif %}
+
+            <h2>
+
+                Match Percentage:
+                {{ match_percent }}%
+
+            </h2>
+
+            <h3>
+                Matched Skills
+            </h3>
+
+            <ul>
+
+                {% for skill in matched_skills %}
+
+                <li>
+                    {{ skill }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
